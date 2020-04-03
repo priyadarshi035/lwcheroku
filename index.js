@@ -5,3 +5,4 @@ import UiApp from 'ui/app';
 registerWireService(register);
 
 customElements.define('ui-app', buildCustomElementConstructor(UiApp));
+
