@@ -8,16 +8,16 @@
                     <ui-button label="Search" class="button" onclick={handleSearchClick}></ui-button>
                 </p>
             </div>
-            <template if:true={pokemons}>
+            <template if:true={contacts}>
                 <ul style="list-style-type:square;" >
-                    <template for:each={pokemons.abilities} for:item="pokemon">
+                    <template for:each={contacts.data} for:item="pokemon">
                         <li key={pokemon.id} class="search-results">
-                            {pokemon.ability.name}
+                            {pokemon.name}
                         </li>
                     </template>
                 </ul>
             </template>
-            <template if:false={pokemons}>
+            <template if:false={contacts}>
                 <template if:true={error}>
                     <template for:each={error} for:item="errorValue">
                         {errorValue}
