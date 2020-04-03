@@ -1,9 +1,30 @@
 <template>
     <section class="content container page-background">
         <article class="container">
-            <div>
-                 
+            <div class="search">
+                <ui-input type="search" onchange={handleSearchKeyChange} label="Type Pokémon Name" value={searchKey}>
+                </ui-input>
+                <p class="margin-vertical-small">
+                    <ui-button label="Search" class="button" onclick={handleSearchClick}></ui-button>
+                </p>
             </div>
+            <template if:true={pokemons}>
+                <ul style="list-style-type:square;" >
+                    <template for:each={pokemons.abilities} for:item="pokemon">
+                        <li key={pokemon.id} class="search-results">
+                            {pokemon.ability.name}
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={pokemons}>
+                <template if:true={error}>
+                    <template for:each={error} for:item="errorValue">
+                        {errorValue}
+                    </template>
+                </template>
+            </template>
+        </div>
         </article>
     </section>
 </template>
