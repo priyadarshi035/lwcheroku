@@ -38,7 +38,7 @@
     },
     "repository": "trailheadapps/lwc-recipes-oss",
     "scripts": {
-        "build": "npm start",
+        "build": "npm start"
 
 
     }
